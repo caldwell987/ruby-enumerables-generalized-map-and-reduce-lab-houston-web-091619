@@ -1,7 +1,8 @@
 def map(array)
   new =[]
   i = 0
-  while i< array.length
+  
+    while i < array.length
     new.push(yield(array[i]))
     i += 1
   end
@@ -9,17 +10,17 @@ def map(array)
 end
 
 
-def reduce(array, SV=nill)
-  if SV 
-    sum = SV
-    i = 0
+def reduce(array, sv=nill)
+  if sv
+      sum = sv
+      i = 0
   else
-    sum = array[0]
-    i = 1
+      sum = array[0]
+      i = 1
   end
-  while i < array.length
-  sum = yield(sum, array[i])
-  i += 1
+    while i < array.length
+    sum = yield(sum, array[i])
+    i += 1
 end
 sum
 end
